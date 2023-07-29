@@ -1,6 +1,9 @@
 import numpy as np
 import pickle
 import streamlit as st
+from imblearn.over_sampling import SMOTE
+from sklearn.pipeline import Pipeline, make_pipeline
+from imblearn.pipeline import Pipeline, make_pipeline
 
 #loading the saved model
 loaded_model = pickle.load(open('trained_model.sav', 'rb')) # Reading the binary format
