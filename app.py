@@ -1,6 +1,7 @@
 import numpy as np
 import pickle
 import streamlit as st
+install imblearn
 from imblearn.over_sampling import SMOTE
 from sklearn.pipeline import Pipeline, make_pipeline
 from imblearn.pipeline import Pipeline, make_pipeline
