@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 
 #loading the saved model
-loaded_model = pickle.load(open('D:/ZIDNA/IMPRTNT/Digital Skola/Final Project Data Science 26/Model Deployment/trained_model.sav', 'rb')) # Reading the binary format
+loaded_model = pickle.load(open('trained_model.sav', 'rb')) # Reading the binary format
 
 
 # Creating a function for prediction
