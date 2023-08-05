@@ -1,10 +1,6 @@
 import numpy as np
 import pickle
 import streamlit as st
-# import imblearn
-# from imblearn.over_sampling import SMOTE
-# from sklearn.pipeline import Pipeline, make_pipeline
-# from imblearn.pipeline import Pipeline, make_pipeline
 
 #loading the saved model
 loaded_model = pickle.load(open('trained_model.sav', 'rb')) # Reading the binary format
@@ -42,7 +38,6 @@ def main():
     no_of_week_nights =	st.text_input('How many night on weekday')
     required_car_parking_space = st.text_input('Using the parking space (Yes=1;No=0)')
     lead_time =	st.text_input('The Booking Lead Time')
-    arrival_year = st.text_input('Year of arrival date')
     repeated_guest = st.text_input('Is the customer a repeated guest?  (Yes=1;No=0)')
     no_of_previous_cancellations =	st.text_input('Number of previous bookings that were canceled')
     no_of_previous_bookings_not_canceled =	st.text_input('Number of previous bookings that were not canceled')
@@ -83,9 +78,9 @@ def main():
     # Create a button for prediction
     if st.button('Booking Status'):
         cancellation = cancellation_prediction([no_of_adults, no_of_children, no_of_weekend_nights, no_of_week_nights,
-                                                required_car_parking_space, lead_time, arrival_year, repeated_guest, 
+                                                required_car_parking_space, lead_time, repeated_guest, 
                                                 no_of_previous_cancellations, no_of_previous_bookings_not_canceled, 
-                                                avg_price_per_room, no_of_special_requests, ToM_Plan_1,	ToM_Plan_2,	ToM_Plan_3,
+                                                avg_price_per_room, no_of_special_requests, ToM_Plan_1,	ToM_Plan_2,
                                                 ToM_Plan_NS, Room_Type_1, Room_Type_2, Room_Type_3,	Room_Type_4, Room_Type_5, 
                                                 Room_Type_6, Room_Type_7, arrival_month_1, arrival_month_10, arrival_month_11,
                                                 arrival_month_12, arrival_month_2, arrival_month_3, arrival_month_4, arrival_month_5,
